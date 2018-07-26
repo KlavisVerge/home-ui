@@ -1,0 +1,6 @@
+{
+  "name": "home-ui",
+  "short_name": "home-ui",
+  "start_url": "/",
+  "display": "standalone"
+}

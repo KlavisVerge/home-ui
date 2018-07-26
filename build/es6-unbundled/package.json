@@ -1,0 +1,10 @@
+{
+  "name": "home-ui",
+  "dependencies": {
+    "api-nav": "KlavisVerge/api-nav",
+    "@polymer/polymer": "^3.0.0",
+    "@webcomponents/webcomponentsjs": "^2.0.0"
+  },
+  "devDependencies": {},
+  "author": "Nick Phillips <imprecatorr@gmail.com>"
+}
