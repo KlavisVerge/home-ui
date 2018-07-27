@@ -36,6 +36,7 @@ class HomeUiApp extends PolymerElement {
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
+          font-family: sans-serif;
         }
      }
       </style>
@@ -43,7 +44,7 @@ class HomeUiApp extends PolymerElement {
         <div class="container">
           <div class="imagediv" style="background:url([[current]]); height: [[height]]; width: [[width]]; no-repeat;"></div>
           <div class="overlay"></div>
-          <div class="centered"><h1>Welcome to your gaming hub at StatSplash.com!</h1><p>Click anywhere to get started</p></div>
+          <div class="centered"><h1>Welcome to StatSplash.com!</h1><p>Click anywhere to get started</p></div>
         </div>
       </a>
     `;
