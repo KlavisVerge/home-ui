@@ -81,6 +81,7 @@ class HomeUiApp extends PolymerElement {
     super.ready();
     var url = 'https://3oemw4weak.execute-api.us-east-1.amazonaws.com/api/twitch-games';
       var data = {games: this.games};
+      let err = false;
 
       fetch(url, {
         method: 'POST',
@@ -94,8 +95,12 @@ class HomeUiApp extends PolymerElement {
         this.active = false;
         this.$.spinner.classList.remove('active');
         console.error('Error:', error);
+        err = true;
       })
       .then(response => {
+        if(err){
+          return;
+        }
         for(var i = 0; i < response.game.data.length; i++){
           let url = response.game.data[i].box_art_url.replace('{width}', window.innerWidth).replace('{height}',  window.innerHeight);
           if(i === 0){
