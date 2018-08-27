@@ -42,7 +42,7 @@ class HomeUiApp extends PolymerElement {
       </style>
       <a href="https://statsplash.com/games">
         <div class="container">
-          <div class="imagediv" style="background:url([[current]]); height: [[height]]; width: [[width]]; no-repeat;"></div>
+          <div class="imagediv" style="background:url([[current]]); height: [[height]]; width: [[width]]; margin:0 auto;"></div>
           <div class="overlay"></div>
           <div class="centered"><h1>Welcome to StatSplash.com!</h1><p>Click anywhere to get started</p></div>
         </div>
@@ -107,12 +107,20 @@ class HomeUiApp extends PolymerElement {
         return;
       }
       for(var i = 0; i < response.game.data.length; i++){
-        let url = response.game.data[i].box_art_url.replace('{width}', window.innerWidth).replace('{height}',  window.innerHeight);
+        let height = 0;
+        let width = 0;
+        if(window.innerHeight > window.innerWidth){
+          height = Math.round(window.innerWidth * .75);
+          width = window.innerWidth;
+        } else{
+          height = window.innerHeight;
+          width = Math.round(window.innerHeight * 1.25);
+        }
+        let url = response.game.data[i].box_art_url.replace('{width}', width).replace('{height}',  height);
         if(i === 0){
           this.current = url;
-          this.current = url;
-          this.height = window.innerHeight - 17 + 'px';
-          this.width = window.innerWidth - 17 + 'px';
+          this.height = height - 17 + 'px';
+          this.width = width - 17 + 'px';
         }
         this.allimages.push(url);
       }
@@ -120,11 +128,20 @@ class HomeUiApp extends PolymerElement {
       window.addEventListener("resize", function(event) {
         let i = 0;
         while(i < pol.allimages.length){
-          pol.allimages[i] = response.game.data[i].box_art_url.replace('{width}', window.innerWidth).replace('{height}',  window.innerHeight);
+          let height = 0;
+          let width = 0;
+          if(window.innerHeight > window.innerWidth){
+            height = Math.round(window.innerWidth * .75);
+            width = window.innerWidth;
+          } else{
+            height = window.innerHeight;
+            width = Math.round(window.innerHeight * 1.25);
+          }
+          pol.allimages[i] = response.game.data[i].box_art_url.replace('{width}', width).replace('{height}',  height);
           if(i === pol.currentlocation){
             pol.current = pol.allimages[pol.currentlocation];
-            pol.width = window.innerWidth - 17 + 'px';
-            pol.height = window.innerHeight - 17 + 'px';
+            pol.width = width - 17 + 'px';
+            pol.height = height - 17 + 'px';
           }
           i++;
         }
@@ -134,9 +151,18 @@ class HomeUiApp extends PolymerElement {
         if(poly.currentlocation === pol.allimages.length){
           poly.currentlocation = 0;
         }
+        let height = 0;
+        let width = 0;
+        if(window.innerHeight > window.innerWidth){
+          height = Math.round(window.innerWidth * .75);
+          width = window.innerWidth;
+        } else{
+          height = window.innerHeight;
+          width = Math.round(window.innerHeight * 1.25);
+        }
         poly.current = poly.allimages[poly.currentlocation];
-        poly.height = window.innerHeight - 17 + 'px';
-        poly.width = window.innerWidth - 17 + 'px';
+        poly.height = height - 17 + 'px';
+        poly.width = width - 17 + 'px';
       }, 5000, this);
     });
   }
