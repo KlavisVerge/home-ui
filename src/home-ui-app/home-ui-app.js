@@ -40,7 +40,7 @@ class HomeUiApp extends PolymerElement {
         }
      }
       </style>
-      <a href="https://statsplash.com/games">
+      <a href="https://www.statsplash.com/games">
         <div class="container">
           <div class="imagediv" style="background:url([[current]]); height: [[height]]; width: [[width]]; margin:0 auto;"></div>
           <div class="overlay"></div>
