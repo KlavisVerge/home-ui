@@ -110,8 +110,8 @@ class HomeUiApp extends PolymerElement {
         let height = 0;
         let width = 0;
         if(window.innerWidth < 480){
-          window.innerHeight - 17 + 'px';
-          width = window.innerWidth - 17 + 'px';
+          height = window.innerHeight - 17;
+          width = window.innerWidth - 17;
         }else if(window.innerHeight > window.innerWidth){
           height = Math.round(window.innerWidth * .75);
           width = window.innerWidth;
@@ -134,8 +134,8 @@ class HomeUiApp extends PolymerElement {
           let height = 0;
           let width = 0;
           if(window.innerWidth < 480){
-            window.innerHeight - 17 + 'px';
-            width = window.innerWidth - 17 + 'px';
+            height = window.innerHeight - 17;
+            width = window.innerWidth - 17;
           }else if(window.innerHeight > window.innerWidth){
             height = Math.round(window.innerWidth * .75);
             width = window.innerWidth;
@@ -160,8 +160,8 @@ class HomeUiApp extends PolymerElement {
         let height = 0;
         let width = 0;
         if(window.innerWidth < 480){
-          window.innerHeight - 17 + 'px';
-          width = window.innerWidth - 17 + 'px';
+          height = window.innerHeight - 17;
+          width = window.innerWidth - 17;
         }else if(window.innerHeight > window.innerWidth){
           height = Math.round(window.innerWidth * .75);
           width = window.innerWidth;
