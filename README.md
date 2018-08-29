@@ -35,4 +35,4 @@ Your application is already set up to be tested via [web-component-tester](https
 ## Deploy
 
 polymer build
-aws s3 sync ./build/es6-unbundled s3://apis-for-all/ --acl public-read --exclude "*games/*" --exclude "*about/*"
+aws s3 sync ./build/es6-unbundled s3://statsplash/ --acl public-read --exclude "*games/*" --exclude "*about/*"
