@@ -109,7 +109,10 @@ class HomeUiApp extends PolymerElement {
       for(var i = 0; i < response.game.data.length; i++){
         let height = 0;
         let width = 0;
-        if(window.innerHeight > window.innerWidth){
+        if(window.innerWidth < 480){
+          window.innerHeight - 17 + 'px';
+          width = window.innerWidth - 17 + 'px';
+        }else if(window.innerHeight > window.innerWidth){
           height = Math.round(window.innerWidth * .75);
           width = window.innerWidth;
         } else{
@@ -130,7 +133,10 @@ class HomeUiApp extends PolymerElement {
         while(i < pol.allimages.length){
           let height = 0;
           let width = 0;
-          if(window.innerHeight > window.innerWidth){
+          if(window.innerWidth < 480){
+            window.innerHeight - 17 + 'px';
+            width = window.innerWidth - 17 + 'px';
+          }else if(window.innerHeight > window.innerWidth){
             height = Math.round(window.innerWidth * .75);
             width = window.innerWidth;
           } else{
@@ -153,7 +159,10 @@ class HomeUiApp extends PolymerElement {
         }
         let height = 0;
         let width = 0;
-        if(window.innerHeight > window.innerWidth){
+        if(window.innerWidth < 480){
+          window.innerHeight - 17 + 'px';
+          width = window.innerWidth - 17 + 'px';
+        }else if(window.innerHeight > window.innerWidth){
           height = Math.round(window.innerWidth * .75);
           width = window.innerWidth;
         } else{
